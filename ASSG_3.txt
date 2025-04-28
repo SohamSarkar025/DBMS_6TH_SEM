@@ -1,0 +1,31 @@
+1.select count(*) from sales_order_c;
+
+2.select avg(sell_price) from product_master_c;
+
+3.select count(*) from product_master_c where sell_price >= 1500;
+
+4. select max(sell_price) MAX,min(sell_price) MIN from product_master_c;
+
+or
+
+4.select max(sell_price) as MAX,min(sell_price) as MIN from product_master_c;
+
+5. update client_master_c set city='Madras' where client_no='C005';
+
+6. update client_master_c set Balance_due=3000 where client_no='C005';
+
+7.delete from client_master_c where state='TamilNadu';
+
+8.alter table client_master_c add  Phone_no number(10);
+
+9.alter table client_master_c modify pincode number(10);
+
+10.alter table client_master_c drop column adress2;
+
+11.create table client_master_d as select * from client_master_c where 1=2;
+
+12.insert into client_master_d select * from client_master_c;
+
+13.rename client_master_d to c_master;
+
+14.drop table c_master;

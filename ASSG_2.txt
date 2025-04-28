@@ -1,0 +1,30 @@
+1.select name from client_master_c where name like '_a%';
+
+
+2.select * from client_master_c where city not like 'B%';
+
+3.select name from client_master_c where length(name)=12 and name like 'I%';
+
+4.select * from client_master_c where city in ('Bombay','Delhi');
+
+5.select * from client_master_c where balance_due>10000;
+
+6.select * from sales_order_c where to_char(Order_date,'mon')='jan';
+
+7.select * from sales_order_c where client_no in('C001','C002');
+
+8.select * from product_master_c where sell_price between 2000 and 5000;
+
+or
+
+8.select * from product_master_c where sell_price > 2000 and sell_price < 5000;
+
+9.select product_no,description,sell_price,sell_price*1.15 as New_Price from product_master_c where sell_price >1500;
+
+10.select name,city,state from client_master where state='Maharastra';
+
+11.select to_char(delivery_date,'Month-DD') from sales_order_c;
+
+12. select to_char(Order_date,'DD-Mon-YY') from sales_order_c;
+
+13.select sysdate+15 as New_Date from dual;

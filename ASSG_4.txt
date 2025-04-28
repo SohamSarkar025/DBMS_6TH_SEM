@@ -1,0 +1,27 @@
+1.select lpad(ename,15) from emp_c;
+
+2.select lpad(ename,15,'*') from emp_c;
+
+3.select * from emp_c where job='MANAGER' and deptno=10 or job='CLERK' and deptno=20 or job != 'MANAGER' and job != 'CLERK' and sal >=2000;
+
+4.select ename,hiredate from emp_c where hiredate between to_date('1-02-1981','dd-mm-yyyy') and to_date('31-08-1981','dd-mm-yyyy');
+
+5.select * from emp_c where job='MANAGER' and to_char(hiredate,'YY')='81';
+
+6.select ename,sal from emp_c where sal in (800,1600,2450);
+
+7.select ename,job from emp_c where job in ('SALESMAN','ANALYST','CLERK');
+
+8.select count(ename),avg(sal) from emp_c group by deptno;
+
+9. select avg(sal) from emp_c where deptno=30;
+
+10.select min(sal) from emp_c where job='CLERK';
+
+11.select max(sal) from emp_c where job='SALESMAN';
+
+12.Not done by SST
+
+13.select ename,comm from emp_c where comm is null;
+
+14.select deptno,dname from dept_c where deptno not in(select deptno from emp_c);

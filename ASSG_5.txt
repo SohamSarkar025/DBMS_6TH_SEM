@@ -1,0 +1,23 @@
+1.select ename,dname,loc from emp_c,dept_c where emp_c.deptno=dept_c.deptno order by dname;
+
+2.select ename,sal,loc from emp_c, dept_c where emp_c.deptno=dept_c.deptno and loc='DALLAS' order by sal desc;
+
+3.SELECT ENAME, DNAME, JOB, LOC FROM EMP_c LEFT JOIN DEPT_c ON EMP_c.DEPTNO=DEPT_c.DEPTNO WHERE LOC='DALLAS';
+
+4.select ename,sal,sal * 0.10 PF,sal * 0.60 HRA,sal*0.40 DA,(sal+sal*0.10+sal*0.40+sal*0.60) GROSS from emp_c order by gross asc;
+
+5.select ename,sal from emp_c where mgr=(select empno from emp_c where ename='KING');
+
+6.select ename,loc,sal from emp_c,dept_c where emp_c.deptno=dept_c.deptno and loc='DALLAS' and sal>=(select min(sal) from emp_c,dept_c where emp_c.deptno=dept_c.deptno and loc='CHICAGO');
+
+7.select ename,job from emp_c where job=(select job from emp_c where ename='SMITH');
+
+8.select job from emp_c where sal=(select max(avg(sal)) from emp_c group by job);
+
+9.select * from (select ename,sal from emp_c order by sal desc)where rownum<=10;
+
+10.select replace(ename,'A','a') from emp_c;
+
+11.select ename,round(sal,-3) from emp_c;
+
+12.select substr(ename,1,3) , substr(ename,-3) from emp_c;

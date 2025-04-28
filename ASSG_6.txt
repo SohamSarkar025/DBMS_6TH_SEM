@@ -1,0 +1,15 @@
+
+1.create view vw_client_master as select client_no,name,adress1,balance_due from client_master_c;
+insert into vw_client_master values('C007','Soham Sarkar','Uttarpara',1000);
+insert into vw_client_master values('C008','Nibedita Sarkar','Uttarpara',2000);
+insert into vw_client_master values('C009','Antara Maity','Bengalore',3000);
+update vw_client_master set balance_due=500 where client_no='C008';
+delete from vw_client_master where client_no='C007';
+select * from vw_client_master;
+select * from client_master_c;
+
+2. create view vw_sales_det as select s1.client_no,s1.order_no,s1.order_date,s2.product_no,s2.qty_ordered,s1.order_status from sales_order_c s1,sales_order_details_c s2 where s1.order_no=s2.order_no and s1.order_status='BackOrder';
+insert into vw_sales_det values('C006','O19800','12-Jan-91','P00091',100,'InProcess');
+Update vw_sales_det set client_no='C006' where order_no='O19002';
+Delete from vw_sales_det where client_no='C005';
+select * from vw_sales_det;
